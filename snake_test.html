@@ -23,6 +23,7 @@
 
 <script type="text/javascript">
 // Constant
+var testGit = 0;
 var COL = 30, ROW = 30;
 var SNAKE = 1, FRUIT = 2, EMPTY = 0;
 var UP = 0, DOWN = 1, LEFT = 2, RIGHT = 3;
@@ -131,12 +132,10 @@ function update(){
     if(frame%12 === 0){
         var nx = snake.last.x;
         var ny = snake.last.y;
-        if(nx < 0 || nx> grid.width 
-        || ny < 0 || ny > grid.height
-        
-        ){
+        if(nx < 0 || nx >= grid.width 
+            || ny < 0 || ny >= grid.height){
             return init();
-            }
+        }
         switch(snake.direction){
             case UP:
                 ny --;
